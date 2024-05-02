@@ -27,8 +27,9 @@ plt.rcParams['figure.figsize'] = (10, 6)
 
 
 #convert .txt to .csv
-# replace 'current_delimiter' with the delimiter in your txt file
 def convert_txt_to_csv(input_filename, output_filename, current_delimiter=';', file_encoding='ISO-8859-1'):
+    import csv
+    
     # Open the input file and the output file with the specified encoding
     with open(input_filename, 'r', encoding=file_encoding) as infile, \
          open(output_filename, 'w', newline='', encoding='utf-8') as outfile:
@@ -43,10 +44,9 @@ def convert_txt_to_csv(input_filename, output_filename, current_delimiter=';', f
             # Write the fields as a row in the CSV file
             writer.writerow(line_fields)
 
-# Make sure to replace 'path_to_your_large_input_file.txt' with the actual path to your text file
-# Replace 'output_file_name.csv' with the desired output file name
-# Adjust the delimiter and encoding as necessary
-convert_txt_to_csv('path_to_your_large_input_file.txt', 'output_file_name.csv', ',', 'ISO-8859-1')
+# Specify your input file, output file, the current delimiter, and possibly the encoding
+convert_txt_to_csv('Dinex_HCV_VIO_forecast_2023_2033.txt', 'Dinex_HCV_VIO_forecast_2023_2033.csv', ';', 'ISO-8859-1')  # Adjust encoding as needed
+
 
 
 #Load and view the data
